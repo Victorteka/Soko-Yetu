@@ -19,6 +19,6 @@ module.exports = {
       entitiesDir: "src/models"
     },
     extra: {
-      connectionLimit: 20
+      connectionLimit: 2000
     }
 }
