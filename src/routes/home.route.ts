@@ -1,22 +1,17 @@
 import { Response, Router } from "express";
+import ServerResponse from "../util/serverResponse";
 
 
 export const homeRouter = Router()
 
 homeRouter.get("/", (_, res: Response)=>{
-    res.status(200)
-        .json({
-            status: "success",
-            message: "welcome to Soko yetu API"
-        })
+
+    ServerResponse.successMessage(res, 200, "welcome to Soko yetu API")
+
 })
 
 export const notFound = Router()
 
 notFound.get("*", (_, res: Response)=>{
-    res.status(404)
-        .json({
-            status: "error",
-            message: "resource not found in our server."
-        })
+    ServerResponse.errorMessage(res, 404, "resource not found!")
 })
