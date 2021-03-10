@@ -1,5 +1,6 @@
 import { createConnection } from "typeorm"
 import {config} from "dotenv"
+import User from "../models/userModel";
 
 config()
 export const DBConnect = async () =>{
@@ -12,10 +13,10 @@ export const DBConnect = async () =>{
               port: 5432,
               username: process.env.DB_USER,
               password: process.env.DB_PASSWORD,
-              entities: ["dist/models/*.js"],
+              entities: [User],
               migrations: ["dist/migration/*.js"],
               logging: false,
-              synchronize: false,
+              synchronize: true,
               migrationsRun: true,
               cli: {
               migrationsDir: "src/migration",

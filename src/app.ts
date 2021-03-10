@@ -4,6 +4,7 @@ import logger from "morgan"
 import { homeRouter, notFound } from "./routes/home.route";
 import { BASE_URL } from "./util/constants";
 import { DBConnect } from "./util/dbConnection";
+import { userRegister } from "./routes/user.route";
 
 class App {
     
@@ -27,6 +28,7 @@ class App {
         //routes
         this.app.use(BASE_URL, homeRouter)
         this.app.use(BASE_URL, notFound)
+        this.app.use(BASE_URL, userRegister)
     }
     
 }

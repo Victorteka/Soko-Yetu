@@ -1,7 +1,6 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, getRepository, Index, PrimaryGeneratedColumn } from "typeorm";
 
-
-@Entity()
+@Entity({name: 'users'})
 export default class User {
 
     @PrimaryGeneratedColumn()
@@ -17,4 +16,5 @@ export default class User {
 
     @Column("varchar", {length: 1000, nullable: true})
     public password: String = ""
+
 }
