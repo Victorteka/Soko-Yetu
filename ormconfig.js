@@ -3,7 +3,7 @@ const config = require('dotenv').config
 config()
 
 module.exports = {
-    type: process.env.DB_TYPE,
+    type: "postgres",
     host: process.env.HOST,
     database: process.env.DB,
     port: process.env.DB_PORT,
@@ -19,6 +19,6 @@ module.exports = {
       entitiesDir: "src/models"
     },
     extra: {
-      connectionLimit: 2000
+      connectionLimit: 20
     }
 }

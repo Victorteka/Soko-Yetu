@@ -3,6 +3,7 @@ import cors from "cors"
 import logger from "morgan"
 import { homeRouter, notFound } from "./routes/home.route";
 import { BASE_URL } from "./util/constants";
+import { DBConnect } from "./util/dbConnection";
 
 class App {
     
@@ -11,6 +12,9 @@ class App {
     constructor(){
         this.app = express()
         this.config()
+        DBConnect().then(async ()=>{
+            this.app
+        })
     }
 
     private config(): void{
