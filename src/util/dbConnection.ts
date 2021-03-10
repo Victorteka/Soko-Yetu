@@ -2,7 +2,6 @@ import { createConnection } from "typeorm"
 import {config} from "dotenv"
 
 config()
-
 export const DBConnect = async () =>{
     try {
         if (process.env.NODE_ENV === "development") {
